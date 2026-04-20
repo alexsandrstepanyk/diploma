@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anerkennung Rechner — Підтвердження диплому в Німеччині 2025</title>
+<meta name="description" content="Безкоштовний калькулятор для підтвердження диплому в Німеччині. Дізнайтесь покрокову інструкцію для вашої країни, спеціальності та рівня освіти.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0a0a0f;--ink2:#48464f;--ink3:#9896a0;
+  --paper:#f4f2ee;--white:#ffffff;--surf:#f9f8f5;
+  --brd:rgba(0,0,0,0.08);--brd2:rgba(0,0,0,0.15);
+  --accent:#1a1a2e;--gold:#c9a84c;--goldL:#fdf6e3;
+  --green:#155e3a;--greenL:#eaf6f0;--greenB:rgba(21,94,58,0.15);
+  --red:#b91c1c;--redL:#fef2f2;
+  --blue:#1e3a8a;--blueL:#eff6ff;
+  --amber:#92400e;--amberL:#fffbeb;
+  --purple:#5b21b6;--purpleL:#f5f3ff;
+  --r:16px;--r2:10px;--r3:6px;
+  --sh:0 1px 8px rgba(0,0,0,0.07),0 0 0 0.5px rgba(0,0,0,0.05);
+  --shL:0 8px 32px rgba(0,0,0,0.10),0 0 0 0.5px rgba(0,0,0,0.06);
+  --shXL:0 20px 60px rgba(0,0,0,0.12),0 0 0 0.5px rgba(0,0,0,0.06);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--paper);color:var(--ink);min-height:100vh;font-size:14px;line-height:1.6}
+
+/* ─── NAV ─── */
+nav{background:var(--accent);display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;height:52px;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(255,255,255,0.06)}
+.nBrand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nLogo{width:28px;height:28px;border-radius:7px;background:linear-gradient(135deg,#CC0000,#880000);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#fff;letter-spacing:-.02em;flex-shrink:0}
+.nTitle{color:#fff;font-size:14px;font-weight:700;letter-spacing:-.01em}
+.nBadge{font-size:10px;background:var(--gold);color:var(--ink);padding:2px 8px;border-radius:20px;font-weight:700;letter-spacing:.02em}
+
+/* ─── HERO ─── */
+.hero{background:var(--accent);padding:3.5rem 1.5rem 3rem;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'§ § §';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:200px;font-weight:900;color:rgba(255,255,255,0.025);pointer-events:none;white-space:nowrap;letter-spacing:-.05em;font-family:'JetBrains Mono',monospace}
+.heroPill{display:inline-flex;align-items:center;gap:6px;background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.3);border-radius:20px;padding:5px 14px;margin-bottom:1.25rem}
+.heroPillDot{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.heroPillText{font-size:11px;font-weight:600;color:var(--gold);letter-spacing:.06em;text-transform:uppercase;font-family:'JetBrains Mono',monospace}
+.hero h1{font-size:clamp(22px,3.5vw,40px);font-weight:800;color:#fff;letter-spacing:-.03em;line-height:1.15;margin-bottom:.6rem}
+.hero h1 span{color:var(--gold)}
+.heroSub{color:rgba(255,255,255,0.42);font-size:13px;max-width:460px;margin:0 auto 1.5rem}
+.heroStats{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap}
+.hStat{text-align:center}
+.hStatNum{font-size:20px;font-weight:800;color:var(--gold);font-family:'JetBrains Mono',monospace;letter-spacing:-.02em}
+.hStatLbl{font-size:10px;color:rgba(255,255,255,0.3);letter-spacing:.04em;text-transform:uppercase;margin-top:1px}
+
+/* ─── DISCLAIMER ─── */
+.discBanner{background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.25);border-radius:var(--r2);padding:10px 14px;margin-bottom:.85rem;display:flex;gap:10px;align-items:flex-start}
+.discIcon{font-size:15px;flex-shrink:0;margin-top:1px}
+.discText{font-size:11px;color:#665520;line-height:1.6;font-weight:500}
+
+/* ─── PROGRESS ─── */
+.page{max-width:660px;margin:0 auto;padding:1.75rem 1.25rem 4rem}
+.progWrap{margin-bottom:1.5rem}
+.progBar{height:3px;background:var(--brd);border-radius:2px;margin-bottom:.6rem}
+.progFill{height:100%;background:linear-gradient(90deg,#CC0000,var(--gold));border-radius:2px;transition:width .4s cubic-bezier(.4,0,.2,1)}
+.progLabel{display:flex;justify-content:space-between;font-size:11px;color:var(--ink3);font-family:'JetBrains Mono',monospace}
+
+/* ─── STEPS ─── */
+.stepDots{display:flex;align-items:center;gap:0;margin-bottom:1.5rem;overflow-x:auto;scrollbar-width:none}
+.stepDots::-webkit-scrollbar{display:none}
+.sDot{flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:4px;padding:0 8px;position:relative}
+.sDotCircle{width:26px;height:26px;border-radius:50%;border:2px solid var(--brd);background:var(--white);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;transition:all .25s;font-family:'JetBrains Mono',monospace}
+.sDotLabel{font-size:9px;color:var(--ink3);white-space:nowrap;letter-spacing:.03em;font-weight:600;text-transform:uppercase}
+.sDot.done .sDotCircle{background:var(--green);border-color:var(--green);color:#fff}
+.sDot.active .sDotCircle{background:var(--accent);border-color:var(--accent);color:#fff;box-shadow:0 0 0 3px rgba(26,26,46,0.15)}
+.sDot.active .sDotLabel{color:var(--accent)}
+.sDotLine{flex:1;height:2px;background:var(--brd);min-width:20px;flex-shrink:0;margin-bottom:14px}
+.sDot.done + .sDotLine{background:var(--green)}
+
+/* ─── CARD ─── */
+.card{background:var(--white);border-radius:var(--r);box-shadow:var(--sh);padding:1.75rem;margin-bottom:.85rem;border:1px solid var(--brd)}
+.cardEyebrow{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);font-family:'JetBrains Mono',monospace;margin-bottom:.4rem}
+.cardTitle{font-size:18px;font-weight:800;letter-spacing:-.02em;color:var(--ink);line-height:1.2;margin-bottom:.3rem}
+.cardHint{font-size:12px;color:var(--ink2);margin-bottom:1.1rem;line-height:1.55}
+
+/* ─── OPTIONS ─── */
+.opts{display:flex;flex-direction:column;gap:6px}
+.optsGrid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+@media(max-width:440px){.optsGrid{grid-template-columns:1fr}}
+.opt{display:flex;align-items:flex-start;gap:10px;padding:11px 14px;border-radius:var(--r2);border:1.5px solid var(--brd);cursor:pointer;transition:all .15s;font-size:13px;color:var(--ink);background:var(--white);user-select:none}
+.opt:hover{border-color:var(--brd2);background:var(--surf)}
+.opt.sel{border-color:var(--accent);background:var(--accent);color:#fff}
+.opt.sel .optSub{color:rgba(255,255,255,0.55)}
+.optRing{width:16px;height:16px;border-radius:50%;border:2px solid var(--brd2);flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .15s;margin-top:1px}
+.opt.sel .optRing{background:#fff;border-color:#fff}
+.opt.sel .optRing::after{content:'';width:6px;height:6px;background:var(--accent);border-radius:50%;display:block}
+.optIcon{font-size:18px;flex-shrink:0;line-height:1;margin-top:1px}
+.optBody{flex:1}
+.optLabel{font-weight:600;font-size:13px;line-height:1.3}
+.optSub{font-size:11px;color:var(--ink3);margin-top:2px;line-height:1.4}
+
+/* ─── FORM ─── */
+.fGroup{margin-bottom:.9rem}
+.fLabel{display:block;font-size:12px;font-weight:600;color:var(--ink2);margin-bottom:5px;letter-spacing:.01em}
+input[type=text],input[type=number],select,input[type=search]{width:100%;padding:10px 14px;font-size:14px;font-family:'Plus Jakarta Sans',sans-serif;border:1.5px solid var(--brd);border-radius:var(--r2);background:var(--white);color:var(--ink);outline:none;transition:all .15s;appearance:none}
+input:focus,select:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(26,26,46,0.08)}
+select{background-image:url("data:image/svg+xml,%3Csvg width='11' height='7' viewBox='0 0 11 7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4.5 4.5L10 1' stroke='%239896a0' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 13px center;padding-right:36px}
+.fNote{font-size:11px;color:var(--ink3);margin-top:4px}
+.errMsg{font-size:11px;color:var(--red);margin-top:4px;display:none}
+.searchWrap{position:relative;margin-bottom:.6rem}
+.searchWrap input{padding-left:36px}
+.searchIcon{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--ink3);font-size:14px;pointer-events:none}
+
+/* ─── COUNTRY LIST ─── */
+.countryList{display:flex;flex-direction:column;gap:5px;max-height:320px;overflow-y:auto;border:1.5px solid var(--brd);border-radius:var(--r2);padding:4px}
+.countryList::-webkit-scrollbar{width:4px}
+.countryList::-webkit-scrollbar-track{background:transparent}
+.countryList::-webkit-scrollbar-thumb{background:var(--brd2);border-radius:2px}
+.cItem{display:flex;align-items:center;gap:9px;padding:8px 10px;border-radius:6px;cursor:pointer;transition:all .12s;font-size:13px;font-weight:500}
+.cItem:hover{background:var(--surf)}
+.cItem.sel{background:var(--accent);color:#fff}
+.cFlag{font-size:18px;line-height:1;flex-shrink:0}
+.cName{flex:1}
+.cNote{font-size:10px;font-family:'JetBrains Mono',monospace;padding:2px 6px;border-radius:4px;background:var(--brd);color:var(--ink3);flex-shrink:0}
+.cItem.sel .cNote{background:rgba(255,255,255,0.15);color:rgba(255,255,255,0.7)}
+
+/* ─── BUTTONS ─── */
+.btns{display:flex;gap:8px;margin-top:1.1rem}
+.btnBack{padding:10px 18px;font-size:13px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;background:transparent;color:var(--ink2);border:1.5px solid var(--brd);border-radius:var(--r2);cursor:pointer;transition:all .15s}
+.btnBack:hover{border-color:var(--brd2);background:var(--surf)}
+.btnNext{flex:1;padding:12px;font-size:14px;font-weight:700;font-family:'Plus Jakarta Sans',sans-serif;background:var(--accent);color:#fff;border:none;border-radius:var(--r2);cursor:pointer;transition:all .15s;letter-spacing:-.01em}
+.btnNext:hover{background:#2d2d4a;transform:translateY(-1px);box-shadow:var(--sh)}
+.btnNext:active{transform:none}
+
+/* ─── RESULT HERO ─── */
+.resHero{background:var(--accent);border-radius:var(--r);padding:2rem 1.75rem;margin-bottom:.85rem;box-shadow:var(--shXL);position:relative;overflow:hidden}
+.resHero::before{content:'';position:absolute;top:-40px;right:-40px;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,rgba(201,168,76,0.15),transparent);pointer-events:none}
+.resHeroTop{display:flex;align-items:flex-start;gap:16px;margin-bottom:1.25rem}
+.resIcon{width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,var(--gold),#a07830);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;box-shadow:0 4px 16px rgba(201,168,76,0.3)}
+.resTitle{font-size:20px;font-weight:800;color:#fff;letter-spacing:-.02em;line-height:1.2;margin-bottom:4px}
+.resSubTitle{font-size:12px;color:rgba(255,255,255,0.45);line-height:1.5}
+.resTags{display:flex;flex-wrap:wrap;gap:6px;margin-top:1rem}
+.resTag{font-size:10px;font-family:'JetBrains Mono',monospace;font-weight:600;padding:4px 10px;border-radius:20px;background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.55);border:1px solid rgba(255,255,255,0.1)}
+.resTag.gold{background:rgba(201,168,76,0.15);color:var(--gold);border-color:rgba(201,168,76,0.25)}
+.resTag.green{background:rgba(21,94,58,0.3);color:#6ee7b7;border-color:rgba(110,231,183,0.2)}
+.resTag.red{background:rgba(185,28,28,0.3);color:#fca5a5;border-color:rgba(252,165,165,0.2)}
+
+/* ─── INFO CARDS ─── */
+.infoGrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:.85rem}
+@media(max-width:440px){.infoGrid{grid-template-columns:1fr}}
+.infoCard{background:var(--white);border-radius:var(--r2);padding:14px;border:1.5px solid var(--brd);box-shadow:var(--sh)}
+.infoCardIcon{font-size:20px;margin-bottom:6px}
+.infoCardLabel{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);font-family:'JetBrains Mono',monospace;margin-bottom:3px}
+.infoCardValue{font-size:13px;font-weight:700;color:var(--ink)}
+.infoCardNote{font-size:11px;color:var(--ink3);margin-top:2px}
+
+/* ─── PATHWAY ─── */
+.pathCard{background:var(--white);border-radius:var(--r);padding:1.5rem;margin-bottom:.85rem;box-shadow:var(--sh);border:1px solid var(--brd)}
+.pathHeader{display:flex;align-items:center;gap:10px;margin-bottom:1.25rem}
+.pathHeaderIcon{width:32px;height:32px;border-radius:8px;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.pathHeaderTitle{font-size:15px;font-weight:800;letter-spacing:-.01em}
+.pathHeaderSub{font-size:11px;color:var(--ink3);margin-top:1px}
+.pathSteps{display:flex;flex-direction:column;gap:0}
+.pStep{display:flex;gap:0;position:relative}
+.pStep:not(:last-child)::after{content:'';position:absolute;left:15px;top:32px;bottom:0;width:2px;background:var(--brd);z-index:0}
+.pStepNum{width:32px;height:32px;border-radius:50%;background:var(--accent);color:#fff;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;z-index:1;font-family:'JetBrains Mono',monospace;margin-right:12px;margin-bottom:0}
+.pStepBody{flex:1;padding-bottom:1.25rem}
+.pStepTitle{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:3px;line-height:1.3}
+.pStepDesc{font-size:12px;color:var(--ink2);line-height:1.6;margin-bottom:5px}
+.pStepMeta{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}
+.pMeta{font-size:10px;font-family:'JetBrains Mono',monospace;font-weight:600;padding:3px 8px;border-radius:5px}
+.pMeta.time{background:#eff6ff;color:#1e40af}
+.pMeta.cost{background:#f0fdf4;color:#166534}
+.pMeta.where{background:var(--purpleL);color:var(--purple)}
+.pMeta.warn{background:var(--amberL);color:var(--amber)}
+.pStep:last-child .pStepBody{padding-bottom:0}
+
+/* ─── AUTHORITY CARDS ─── */
+.authSection{background:var(--white);border-radius:var(--r);padding:1.5rem;margin-bottom:.85rem;box-shadow:var(--sh);border:1px solid var(--brd)}
+.authTitle{font-size:14px;font-weight:800;letter-spacing:-.01em;margin-bottom:1rem}
+.authCard{display:flex;gap:12px;padding:12px;border-radius:var(--r2);border:1.5px solid var(--brd);margin-bottom:8px;background:var(--surf)}
+.authCard:last-child{margin-bottom:0}
+.authCardIcon{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.authCardBody{flex:1}
+.authCardName{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:2px}
+.authCardDesc{font-size:11px;color:var(--ink2);line-height:1.55;margin-bottom:5px}
+.authCardLink{font-size:11px;font-family:'JetBrains Mono',monospace;color:var(--blue);text-decoration:none;font-weight:600;word-break:break-all}
+.authCardLink:hover{text-decoration:underline}
+
+/* ─── DOCS LIST ─── */
+.docsSection{background:var(--white);border-radius:var(--r);padding:1.5rem;margin-bottom:.85rem;box-shadow:var(--sh);border:1px solid var(--brd)}
+.docsTitle{font-size:14px;font-weight:800;letter-spacing:-.01em;margin-bottom:.85rem}
+.docItem{display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--brd)}
+.docItem:last-child{border-bottom:none;padding-bottom:0}
+.docBadge{width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:1px}
+.docMust{background:var(--accent);color:#fff}
+.docMay{background:var(--goldL);color:var(--amber);border:1px solid var(--gold)}
+.docText{font-size:12px;line-height:1.55}
+.docText strong{font-weight:700;color:var(--ink)}
+.docNote{font-size:11px;color:var(--ink3);margin-top:2px}
+
+/* ─── WARNING BOX ─── */
+.warnBox{background:var(--amberL);border:1.5px solid rgba(146,64,14,0.2);border-radius:var(--r2);padding:12px 14px;margin-bottom:.85rem;display:flex;gap:10px}
+.warnBoxIcon{font-size:16px;flex-shrink:0}
+.warnBoxText{font-size:12px;color:#78350f;line-height:1.6}
+.successBox{background:var(--greenL);border:1.5px solid rgba(21,94,58,0.2);border-radius:var(--r2);padding:12px 14px;margin-bottom:.85rem;display:flex;gap:10px}
+.successBoxIcon{font-size:16px;flex-shrink:0}
+.successBoxText{font-size:12px;color:var(--green);line-height:1.6;font-weight:500}
+
+/* ─── RESTART ─── */
+.restartBtn{width:100%;margin-top:.85rem;padding:12px;font-size:13px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;background:transparent;color:var(--ink2);border:1.5px solid var(--brd);border-radius:var(--r2);cursor:pointer;transition:all .15s}
+.restartBtn:hover{background:var(--white);border-color:var(--brd2)}
+
+footer{background:var(--accent);color:rgba(255,255,255,0.25);text-align:center;padding:1.75rem 1.25rem;font-size:11px;line-height:1.9}
+footer strong{color:rgba(255,255,255,0.45)}
+footer a{color:rgba(255,255,255,0.35);text-decoration:none}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nBrand" href="#">
+    <div class="nLogo">DE</div>
+    <span class="nTitle">Anerkennung Rechner</span>
+  </a>
+  <span class="nBadge">Безкоштовно</span>
+</nav>
+
+<div class="hero">
+  <div class="heroPill"><span class="heroPillDot"></span><span class="heroPillText">Anerkennung 2025</span></div>
+  <h1>Підтвердження диплому<br>в <span>Німеччині</span></h1>
+  <p class="heroSub">Введіть дані про вашу освіту — отримайте покроковий план та список конкретних органів для підтвердження</p>
+  <div class="heroStats">
+    <div class="hStat"><div class="hStatNum">14</div><div class="hStatLbl">типів дипломів</div></div>
+    <div class="hStat"><div class="hStatNum">50+</div><div class="hStatLbl">країн охоплено</div></div>
+    <div class="hStat"><div class="hStatNum">200+</div><div class="hStatLbl">регульованих професій</div></div>
+    <div class="hStat"><div class="hStatNum">0 €</div><div class="hStatLbl">вартість консультації</div></div>
+  </div>
+</div>
+
+<div class="page">
+  <div id="app"></div>
+</div>
+
+<footer>
+  <p>
+    <strong>⚠ Важливо:</strong> Цей калькулятор надає орієнтовну інформацію на основі чинного законодавства.<br>
+    Результати не є офіційним рішенням та не замінюють консультацію фахівця.<br>
+    Джерела: <strong>anabin.kmk.org</strong> · <strong>BQFG 2012</strong> · <strong>EU-Berufsanerkennungsrichtlinie 2005/36/EG</strong> · <strong>BMBF</strong><br>
+    Безкоштовна консультація: <a href="https://www.migrationsberatung-iq.de" target="_blank">migrationsberatung-iQ.de</a>
+  </p>
+
+  <!-- AUTHOR BLOCK -->
+  <div style="margin-top:1.5rem;padding-top:1.25rem;border-top:1px solid rgba(255,255,255,0.07);display:flex;flex-direction:column;align-items:center;gap:10px">
+    <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:center">
+      <div style="display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:30px;padding:6px 14px 6px 8px">
+        <div style="width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#CC0000,#FFCE00);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#fff;flex-shrink:0">S</div>
+        <span style="font-size:12px;font-weight:600;color:rgba(255,255,255,0.75)">Розроблено Stepaniuk Oleksandr</span>
+      </div>
+      <a href="https://stepaniuk.shop" target="_blank" rel="noopener"
+        style="display:flex;align-items:center;gap:6px;background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.28);border-radius:30px;padding:6px 14px;text-decoration:none"
+        onmouseover="this.style.background='rgba(201,168,76,0.22)'" onmouseout="this.style.background='rgba(201,168,76,0.12)'">
+        <span style="font-size:13px">🌐</span>
+        <span style="font-size:12px;font-weight:700;color:#c9a84c;font-family:'JetBrains Mono',monospace">stepaniuk.shop</span>
+      </a>
+    </div>
+    <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:center">
+      <a href="https://deutsch-b1-app.onrender.com" target="_blank" rel="noopener"
+        style="display:flex;align-items:center;gap:6px;text-decoration:none"
+        onmouseover="this.style.opacity='.7'" onmouseout="this.style.opacity='1'">
+        <span style="font-size:14px">🇩🇪</span>
+        <span style="font-size:11px;color:rgba(255,255,255,0.45);font-weight:500">Deutsch B1 Übungstests</span>
+      </a>
+      <span style="color:rgba(255,255,255,0.15)">·</span>
+      <span style="font-size:11px;color:rgba(255,255,255,0.25)">ВНЖ Калькулятор 2025</span>
+      <span style="color:rgba(255,255,255,0.15)">·</span>
+      <span style="font-size:11px;color:rgba(255,255,255,0.25)">Anerkennung Rechner</span>
+    </div>
+    <p style="font-size:10px;color:rgba(255,255,255,0.18);text-align:center;line-height:1.7;max-width:500px">
+      Правова база: BQFG 2012 · KMK · anabin · EU-RL 2005/36/EG · BÄO · AAppO · DRiG · ArchKammG<br>
+      Версія 2025 · <a href="https://stepaniuk.shop" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.3);text-decoration:none">© Stepaniuk Oleksandr</a>
+    </p>
+  </div>
+</footer>
+
+<script>
+// ════════════════════════════════════════════════════
+// DATA
+// ════════════════════════════════════════════════════
+
+const COUNTRIES = [
+  // Найбільші діаспори в Німеччині
+  {v:'ua',flag:'🇺🇦',name:'Україна',note:'EU-EWR',zone:'non-eu'},
+  {v:'de',flag:'🇩🇪',name:'Німеччина',note:'DE',zone:'de'},
+  {v:'tr',flag:'🇹🇷',name:'Туреччина',note:'Non-EU',zone:'non-eu'},
+  {v:'pl',flag:'🇵🇱',name:'Польща',note:'EU',zone:'eu'},
+  {v:'ro',flag:'🇷🇴',name:'Румунія',note:'EU',zone:'eu'},
+  {v:'ru',flag:'🇷🇺',name:'Росія',note:'Non-EU',zone:'non-eu'},
+  {v:'sy',flag:'🇸🇾',name:'Сирія',note:'Non-EU',zone:'non-eu'},
+  {v:'af',flag:'🇦🇫',name:'Афганістан',note:'Non-EU',zone:'non-eu'},
+  {v:'iq',flag:'🇮🇶',name:'Ірак',note:'Non-EU',zone:'non-eu'},
+  {v:'ir',flag:'🇮🇷',name:'Іран',note:'Non-EU',zone:'non-eu'},
+  {v:'in',flag:'🇮🇳',name:'Індія',note:'Non-EU',zone:'non-eu'},
+  {v:'bg',flag:'🇧🇬',name:'Болгарія',note:'EU',zone:'eu'},
+  {v:'hr',flag:'🇭🇷',name:'Хорватія',note:'EU',zone:'eu'},
+  {v:'rs',flag:'🇷🇸',name:'Сербія',note:'Non-EU',zone:'non-eu'},
+  {v:'ba',flag:'🇧🇦',name:'Боснія і Герцеговина',note:'Non-EU',zone:'non-eu'},
+  {v:'xk',flag:'🇽🇰',name:'Косово',note:'Non-EU',zone:'non-eu'},
+  {v:'mk',flag:'🇲🇰',name:'Північна Македонія',note:'Non-EU',zone:'non-eu'},
+  {v:'ge',flag:'🇬🇪',name:'Грузія',note:'Non-EU',zone:'non-eu'},
+  {v:'md',flag:'🇲🇩',name:'Молдова',note:'Non-EU',zone:'non-eu'},
+  {v:'az',flag:'🇦🇿',name:'Азербайджан',note:'Non-EU',zone:'non-eu'},
+  {v:'am',flag:'🇦🇲',name:'Вірменія',note:'Non-EU',zone:'non-eu'},
+  {v:'kz',flag:'🇰🇿',name:'Казахстан',note:'Non-EU',zone:'non-eu'},
+  {v:'uz',flag:'🇺🇿',name:'Узбекистан',note:'Non-EU',zone:'non-eu'},
+  {v:'ma',flag:'🇲🇦',name:'Марокко',note:'Non-EU',zone:'non-eu'},
+  {v:'tn',flag:'🇹🇳',name:'Туніс',note:'Non-EU',zone:'non-eu'},
+  {v:'eg',flag:'🇪🇬',name:'Єгипет',note:'Non-EU',zone:'non-eu'},
+  {v:'ng',flag:'🇳🇬',name:'Нігерія',note:'Non-EU',zone:'non-eu'},
+  {v:'et',flag:'🇪🇹',name:'Ефіопія',note:'Non-EU',zone:'non-eu'},
+  {v:'pk',flag:'🇵🇰',name:'Пакистан',note:'Non-EU',zone:'non-eu'},
+  {v:'cn',flag:'🇨🇳',name:'Китай',note:'Non-EU',zone:'non-eu'},
+  {v:'vn',flag:'🇻🇳',name:'В\'єтнам',note:'Non-EU',zone:'non-eu'},
+  {v:'ph',flag:'🇵🇭',name:'Філіппіни',note:'Non-EU',zone:'non-eu'},
+  {v:'br',flag:'🇧🇷',name:'Бразилія',note:'Non-EU',zone:'non-eu'},
+  {v:'us',flag:'🇺🇸',name:'США',note:'Non-EU',zone:'non-eu'},
+  {v:'gb',flag:'🇬🇧',name:'Велика Британія',note:'Non-EU',zone:'non-eu'},
+  {v:'fr',flag:'🇫🇷',name:'Франція',note:'EU',zone:'eu'},
+  {v:'it',flag:'🇮🇹',name:'Італія',note:'EU',zone:'eu'},
+  {v:'es',flag:'🇪🇸',name:'Іспанія',note:'EU',zone:'eu'},
+  {v:'at',flag:'🇦🇹',name:'Австрія',note:'EU',zone:'eu'},
+  {v:'ch',flag:'🇨🇭',name:'Швейцарія',note:'Non-EU',zone:'eu-like'},
+  {v:'other',flag:'🌍',name:'Інша країна',note:'',zone:'non-eu'},
+];
+
+const DEGREE_LEVELS = [
+  {v:'ausbildung',icon:'🔧',l:'Berufsausbildung / Профтехосвіта',s:'3-річне навчання у Berufsschule або на підприємстві',law:'BQFG §4'},
+  {v:'bachelor',icon:'🎓',l:'Bachelor (B.Sc. / B.A. / B.Eng.)',s:'3–4 роки університетського навчання',law:'§18c AufenthG'},
+  {v:'specialist',icon:'🎓',l:'Спеціаліст / Магістр-Спеціаліст (5 р.)',s:'Диплом спеціаліста (UA/RU: Специалитет)',law:'anabin H+'},
+  {v:'master',icon:'🎓',l:'Master (M.Sc. / M.A. / M.Eng.)',s:'1–2 роки після Bachelor',law:'§18c AufenthG'},
+  {v:'diplom',icon:'🎓',l:'Diplom (старий нім. / Dipl.-Ing. тощо)',s:'Старий 5-річний нім. Diplom або аналог з Східної Європи',law:'anabin'},
+  {v:'promotion',icon:'🔬',l:'Promotion / Doktor (Dr.)',s:'Науковий ступінь, PhD',law:'KMK'},
+  {v:'abitur',icon:'📚',l:'Шкільний атестат / Abitur-Аналог',s:'Повна загальна середня освіта',law:'KMK'},
+  {v:'nursing',icon:'🏥',l:'Медсестра / Pflege (3 роки)',s:'Medizinische Fachausbildung — регульована',law:'KrPflG/PflBG'},
+  {v:'medicine',icon:'🩺',l:'Медицина (Lehramt Medizin)',s:'Лікар — Approbation обов\'язкова',law:'BÄO §3'},
+  {v:'pharmacy',icon:'💊',l:'Фармація',s:'Pharmazie — регульована, Approbation',law:'AAppO §4'},
+  {v:'law',icon:'⚖️',l:'Право / Юрист',s:'Nicht direkt anerkennbar — свій порядок',law:'DRiG'},
+  {v:'teacher',icon:'🏫',l:'Педагог / Вчитель',s:'Lehramt — земельна компетенція',law:'KMK Lehrerportfolio'},
+  {v:'engineer',icon:'⚙️',l:'Інженер',s:'Ingenieur — частково регульована (будівництво)',law:'IngKammer'},
+  {v:'architect',icon:'🏛️',l:'Архітектор',s:'Architekt — регульована, Kammerpflicht',law:'ArchKammG'},
+];
+
+const PROF_TYPES = [
+  {v:'regulated',icon:'🔒',l:'Регульована професія',s:'Лікар, медсестра, юрист, фармацевт, вчитель, архітектор — вимагає офіційного дозволу'},
+  {v:'semi_reg',icon:'🔑',l:'Частково регульована',s:'Інженер, будівництво, деякі соціальні спеціальності'},
+  {v:'unregulated',icon:'🔓',l:'Нерегульована професія',s:'IT, маркетинг, менеджмент, фінанси, більшість гуманітарних — Anerkennung не обов\'язкова, але бажана'},
+  {v:'vocational',icon:'🛠️',l:'Профтехспеціальність',s:'Електрик, механік, кухар, перукар, будівельник — через Handwerkskammer або IHK'},
+];
+
+// ════════════════════════════════════════════════════
+// STATE
+// ════════════════════════════════════════════════════
+const D = {};
+let step = 0;
+const TOTAL = 5;
+
+const STEP_LABELS = ['Країна','Диплом','Тип','Деталі','Ситуація'];
+
+function $(id){return document.getElementById(id)}
+
+// ════════════════════════════════════════════════════
+// RENDER ENGINE
+// ════════════════════════════════════════════════════
+function render(){
+  const app = $('app');
+  if(step >= TOTAL){app.innerHTML = renderResult(); return;}
+  app.innerHTML = renderStep();
+}
+
+function renderProgress(){
+  const pct = Math.round(step/TOTAL*100);
+  const dots = STEP_LABELS.map((l,i)=>{
+    const cls = i<step?'done':i===step?'active':'';
+    const check = i<step?'✓':(i+1).toString();
+    return `<div class="sDot ${cls}">
+      <div class="sDotCircle">${check}</div>
+      <div class="sDotLabel">${l}</div>
+    </div>${i<STEP_LABELS.length-1?'<div class="sDotLine"></div>':''}`;
+  }).join('');
+  return `<div class="progWrap">
+    <div class="progBar"><div class="progFill" style="width:${pct}%"></div></div>
+    <div class="progLabel"><span>Крок ${step+1} з ${TOTAL}</span><span>${pct}% завершено</span></div>
+  </div>
+  <div class="stepDots">${dots}</div>`;
+}
+
+function renderDisc(){
+  return `<div class="discBanner">
+    <span class="discIcon">⚠️</span>
+    <div class="discText"><strong>Важливо:</strong> Ця інформація є орієнтовною і не замінює офіційне рішення компетентного органу. Результат залежить від конкретного університету, спеціальності та федеральної землі.</div>
+  </div>`;
+}
+
+function renderStep(){
+  const back = step > 0 ? `<button class="btnBack" onclick="goBack()">← Назад</button>` : '';
+  const isLast = step === TOTAL-1;
+  let card = '';
+
+  // STEP 0 — Країна
+  if(step===0){
+    const sel = D.country || '';
+    const query = D.countrySearch || '';
+    const filtered = COUNTRIES.filter(c=>
+      c.name.toLowerCase().includes(query.toLowerCase()) || c.v.includes(query.toLowerCase())
+    );
+    card = `<div class="card">
+      <p class="cardEyebrow">Крок 1 — Країна навчання</p>
+      <h2 class="cardTitle">В якій країні ви здобули освіту?</h2>
+      <p class="cardHint">Від країни залежить процедура та органи визнання диплому</p>
+      <div class="searchWrap">
+        <span class="searchIcon">🔍</span>
+        <input type="search" id="cSearch" placeholder="Пошук країни..." value="${query}" oninput="D.countrySearch=this.value;render()">
+      </div>
+      <div class="countryList">
+        ${filtered.map(c=>`
+          <div class="cItem${sel===c.v?' sel':''}" onclick="pick('country','${c.v}');D.countrySearch='';D.countryZone='${c.zone}'">
+            <span class="cFlag">${c.flag}</span>
+            <span class="cName">${c.name}</span>
+            ${c.note?`<span class="cNote">${c.note}</span>`:''}
+          </div>`).join('')}
+      </div>
+      <div class="errMsg" id="e0">Будь ласка, оберіть країну</div>
+    </div>`;
+  }
+
+  // STEP 1 — Рівень диплому
+  else if(step===1){
+    const sel = D.degree || '';
+    card = `<div class="card">
+      <p class="cardEyebrow">Крок 2 — Рівень освіти</p>
+      <h2 class="cardTitle">Який рівень вашого диплому?</h2>
+      <p class="cardHint">Оберіть тип диплому, який ви хочете підтвердити в Німеччині</p>
+      <div class="opts">
+        ${DEGREE_LEVELS.map(d=>`
+          <div class="opt${sel===d.v?' sel':''}" onclick="pick('degree','${d.v}')">
+            <span class="optIcon">${d.icon}</span>
+            <div class="optBody">
+              <div class="optLabel">${d.l}</div>
+              <div class="optSub">${d.s} <span style="font-family:'JetBrains Mono',monospace;font-size:10px;opacity:.6">[${d.law}]</span></div>
+            </div>
+            <div class="optRing"></div>
+          </div>`).join('')}
+      </div>
+      <div class="errMsg" id="e1">Будь ласка, оберіть рівень освіти</div>
+    </div>`;
+  }
+
+  // STEP 2 — Тип професії
+  else if(step===2){
+    const sel = D.profType || '';
+    card = `<div class="card">
+      <p class="cardEyebrow">Крок 3 — Тип спеціальності</p>
+      <h2 class="cardTitle">Чи є ваша професія регульованою?</h2>
+      <p class="cardHint">Регульовані професії вимагають офіційного дозволу (Approbation / Zulassung). Для нерегульованих — Anerkennung бажана, але не обов'язкова</p>
+      <div class="opts">
+        ${PROF_TYPES.map(p=>`
+          <div class="opt${sel===p.v?' sel':''}" onclick="pick('profType','${p.v}')">
+            <span class="optIcon">${p.icon}</span>
+            <div class="optBody">
+              <div class="optLabel">${p.l}</div>
+              <div class="optSub">${p.s}</div>
+            </div>
+            <div class="optRing"></div>
+          </div>`).join('')}
+      </div>
+      <div class="errMsg" id="e2">Будь ласка, оберіть тип спеціальності</div>
+    </div>`;
+  }
+
+  // STEP 3 — Деталі
+  else if(step===3){
+    card = `<div class="card">
+      <p class="cardEyebrow">Крок 4 — Деталі освіти</p>
+      <h2 class="cardTitle">Розкажіть про ваш диплом</h2>
+      <p class="cardHint">Чим точніші дані — тим точніша рекомендація</p>
+      <div class="fGroup">
+        <label class="fLabel">Спеціальність / Назва спеціалізації</label>
+        <input type="text" id="spec" placeholder="напр. Комп'ютерні науки, Медицина, Право" value="${D.spec||''}" oninput="D.spec=this.value">
+        <div class="fNote">Введіть назву так, як вона вказана у дипломі</div>
+      </div>
+      <div class="fGroup">
+        <label class="fLabel">Рік закінчення навчання</label>
+        <input type="number" id="gradYear" placeholder="напр. 2019" min="1970" max="2025" value="${D.gradYear||''}" oninput="D.gradYear=+this.value">
+        <div class="fNote">Рік видачі диплому</div>
+      </div>
+      <div class="fGroup">
+        <label class="fLabel">Тривалість навчання (повні роки)</label>
+        <select id="studyDur" onchange="D.studyDur=+this.value">
+          <option value="">— оберіть —</option>
+          <option value="2" ${D.studyDur===2?'selected':''}>2 роки</option>
+          <option value="3" ${D.studyDur===3?'selected':''}>3 роки</option>
+          <option value="4" ${D.studyDur===4?'selected':''}>4 роки</option>
+          <option value="5" ${D.studyDur===5?'selected':''}>5 років</option>
+          <option value="6" ${D.studyDur===6?'selected':''}>6 років (медицина/юрид.)</option>
+          <option value="7" ${D.studyDur===7?'selected':''}>7+ років</option>
+        </select>
+      </div>
+      <div class="fGroup">
+        <label class="fLabel">Чи є у вас диплом (оригінал) та всі академічні довідки?</label>
+        <select id="hasDocs" onchange="D.hasDocs=this.value">
+          <option value="">— оберіть —</option>
+          <option value="yes_all" ${D.hasDocs==='yes_all'?'selected':''}>✅ Так — є всі документи (диплом, додаток, транскрипт)</option>
+          <option value="partial" ${D.hasDocs==='partial'?'selected':''}>⚠️ Частково — є диплом, але немає деяких документів</option>
+          <option value:"no" ${D.hasDocs==='no'?'selected':''}>❌ Ні — документи втрачені або недоступні</option>
+        </select>
+        <div class="fNote">Додаток до диплому (Diploma Supplement або академічна довідка) суттєво прискорює розгляд</div>
+      </div>
+      <div class="errMsg" id="e3">Будь ласка, заповніть всі поля</div>
+    </div>`;
+  }
+
+  // STEP 4 — Поточна ситуація
+  else if(step===4){
+    card = `<div class="card">
+      <p class="cardEyebrow">Крок 5 — Ваша ситуація</p>
+      <h2 class="cardTitle">Де ви зараз і яка ваша мета?</h2>
+      <p class="cardHint">Це визначить пріоритети та строки в рекомендаціях</p>
+      <div class="fGroup">
+        <label class="fLabel">Де ви зараз перебуваєте?</label>
+        <div class="opts">
+          ${[
+            {v:'in_de',icon:'🇩🇪',l:'Вже в Німеччині',s:'Маю діючий Aufenthaltserlaubnis або Duldung'},
+            {v:'eu',icon:'🇪🇺',l:'В іншій країні ЄС',s:'Планую переїхати в Німеччину'},
+            {v:'abroad',icon:'✈️',l:'За межами ЄС',s:'Подаю на German Visa або Blue Card з-за кордону'},
+          ].map(o=>`
+            <div class="opt${D.location===o.v?' sel':''}" onclick="D.location='${o.v}';render()">
+              <span class="optIcon">${o.icon}</span>
+              <div class="optBody"><div class="optLabel">${o.l}</div><div class="optSub">${o.s}</div></div>
+              <div class="optRing"></div>
+            </div>`).join('')}
+        </div>
+      </div>
+      <div class="fGroup">
+        <label class="fLabel">Ваша основна мета Anerkennung</label>
+        <select id="goalSel" onchange="D.goal=this.value">
+          <option value="">— оберіть —</option>
+          <option value="blue_card" ${D.goal==='blue_card'?'selected':''}>🔵 EU Blue Card (§18c AufenthG)</option>
+          <option value="work" ${D.goal==='work'?'selected':''}>💼 Офіційне працевлаштування за фахом</option>
+          <option value:"license" ${D.goal==='license'?'selected':''}>🏥 Отримати Approbation / Berufszulassung</option>
+          <option value="ne" ${D.goal==='ne'?'selected':''}>📋 Niederlassungserlaubnis §9</option>
+          <option value="salary" ${D.goal==='salary'?'selected':''}>💰 Підвищення зарплати / кар'єрні цілі</option>
+          <option value="study" ${D.goal==='study'?'selected':''}>📚 Продовження навчання в Німеччині</option>
+        </select>
+      </div>
+      <div class="fGroup">
+        <label class="fLabel">Чи проходили ви вже будь-який процес Anerkennung?</label>
+        <div class="optsGrid">
+          ${[
+            {v:'never',l:'Ще ні'},
+            {v:'started',l:'Щойно почав(ла)'},
+            {v:'partial',l:'Часткове визнання'},
+            {v:'rejected',l:'Відмова'},
+          ].map(o=>`
+            <div class="opt${D.prevAner===o.v?' sel':''}" onclick="D.prevAner='${o.v}';render()" style="padding:9px 12px">
+              <div class="optRing"></div>
+              <div class="optLabel">${o.l}</div>
+            </div>`).join('')}
+        </div>
+      </div>
+      <div class="errMsg" id="e4">Будь ласка, оберіть локацію та мету</div>
+    </div>`;
+  }
+
+  return `${renderProgress()}${renderDisc()}${card}
+    <div class="btns">
+      ${back}
+      <button class="btnNext" onclick="goNext()">${isLast?'Отримати план дій →':'Далі →'}</button>
+    </div>`;
+}
+
+function pick(f,v){D[f]=v; render();}
+
+function goBack(){if(step>0){step--;render();}}
+
+function goNext(){
+  if(step===0&&!D.country){$('e0').style.display='block';return;}
+  if(step===1&&!D.degree){$('e1').style.display='block';return;}
+  if(step===2&&!D.profType){$('e2').style.display='block';return;}
+  if(step===3){
+    if(!D.spec||!D.gradYear||!D.studyDur||!D.hasDocs){$('e3').style.display='block';return;}
+  }
+  if(step===4){
+    if(!D.location||!D.goal){$('e4').style.display='block';return;}
+    step++;render();return;
+  }
+  step++;render();
+}
+
+// ════════════════════════════════════════════════════
+// RESULT ENGINE
+// ════════════════════════════════════════════════════
+function renderResult(){
+  const country = COUNTRIES.find(c=>c.v===D.country)||{name:'—',flag:'🌍',zone:'non-eu'};
+  const degree = DEGREE_LEVELS.find(d=>d.v===D.degree)||{l:'—',icon:'🎓'};
+  const pType = PROF_TYPES.find(p=>p.v===D.profType)||{l:'—',icon:'🔓'};
+  const zone = country.zone;
+  const isEU = zone==='eu'||zone==='de';
+  const isDE = zone==='de';
+
+  // Визначаємо тип Anerkennung
+  const isRegulated = D.profType==='regulated';
+  const isSemiReg = D.profType==='semi_reg';
+  const isVocational = D.degree==='ausbildung'||D.profType==='vocational';
+  const isMedical = ['medicine','nursing','pharmacy'].includes(D.degree);
+  const isAcademic = ['bachelor','master','specialist','diplom','promotion'].includes(D.degree);
+  const isTeacher = D.degree==='teacher';
+  const isArch = D.degree==='architect';
+  const isEngineer = D.degree==='engineer';
+
+  // Рівень складності
+  let difficulty = 'moderate';
+  let diffLabel = 'Помірна складність';
+  let diffColor = '#8a5000';
+  if(isDE){difficulty='easy';diffLabel='Спрощений (нім. диплом)';diffColor='#155e3a';}
+  else if(isEU&&!isRegulated){difficulty='easy';diffLabel='Спрощений (диплом ЄС)';diffColor='#155e3a';}
+  else if(isRegulated&&!isEU){difficulty='hard';diffLabel='Складний (регульована + non-EU)';diffColor='#b91c1c';}
+  else if(isRegulated&&isEU){difficulty='moderate';diffLabel='Середній (регульована, ЄС)';diffColor='#8a5000';}
+  else if(!isRegulated&&isEU){difficulty='easy';diffLabel='Спрощений (нерегульована, ЄС)';diffColor='#155e3a';}
+  else if(!isRegulated&&!isEU){difficulty='moderate';diffLabel='Стандартний (non-EU)';diffColor='#8a5000';}
+
+  // Орієнтовний час
+  let timeEst = '3–6 місяців';
+  if(isDE) timeEst='2–4 тижні (довідка ZAB)';
+  else if(isEU&&!isRegulated) timeEst='4–8 тижнів';
+  else if(isMedical&&!isEU) timeEst='6–18 місяців (Approbation)';
+  else if(isRegulated&&!isEU) timeEst='4–12 місяців';
+  else if(isVocational&&!isEU) timeEst='2–6 місяців (BQFG §4)';
+
+  // Вартість
+  let costEst = '100–600 €';
+  if(isDE) costEst='0–50 € (Statement of Comparability)';
+  else if(isEU&&!isRegulated) costEst='50–200 €';
+  else if(isMedical) costEst='300–800 € + переклади';
+  else if(isVocational) costEst='100–400 €';
+
+  // Шлях та органи
+  const pathway = buildPathway(zone, isRegulated, isSemiReg, isVocational, isMedical, isTeacher, isArch, isEngineer);
+  const authorities = buildAuthorities(zone, isRegulated, isSemiReg, isVocational, isMedical, isTeacher, isArch, isEngineer);
+  const docList = buildDocList(zone, isEU, isMedical, isVocational);
+  const warnings = buildWarnings();
+
+  return `
+  ${renderDisc()}
+
+  <div class="resHero">
+    <div class="resHeroTop">
+      <div class="resIcon">📜</div>
+      <div>
+        <div class="resTitle">Ваш план підтвердження диплому</div>
+        <div class="resSubTitle">${country.flag} ${country.name} · ${degree.icon} ${degree.l}</div>
+        <div class="resSubTitle" style="margin-top:2px">${pType.icon} ${pType.l}</div>
+      </div>
+    </div>
+    <div class="resTags">
+      <span class="resTag gold">⏱ ${timeEst}</span>
+      <span class="resTag gold">💰 ${costEst}</span>
+      <span class="resTag ${difficulty==='easy'?'green':difficulty==='hard'?'red':''}">📊 ${diffLabel}</span>
+      ${D.goal?`<span class="resTag">🎯 ${['blue_card','work','license','ne','salary','study'].map((v,i)=>['EU Blue Card','Робота за фахом','Approbation','Niederlassungserlaubnis','Кар\'єра','Навчання'][i])[['blue_card','work','license','ne','salary','study'].indexOf(D.goal)]||D.goal}</span>`:''}
+    </div>
+  </div>
+
+  <div class="infoGrid">
+    <div class="infoCard">
+      <div class="infoCardIcon">🎓</div>
+      <div class="infoCardLabel">Диплом</div>
+      <div class="infoCardValue">${degree.l.split('(')[0].trim()}</div>
+      <div class="infoCardNote">${D.spec||'—'}, ${D.gradYear||'—'}</div>
+    </div>
+    <div class="infoCard">
+      <div class="infoCardIcon">🌍</div>
+      <div class="infoCardLabel">Країна навчання</div>
+      <div class="infoCardValue">${country.flag} ${country.name}</div>
+      <div class="infoCardNote">Зона: ${zone==='de'?'Deutsch (DE)':zone==='eu'?'ЄС / EWR':zone==='eu-like'?'Прирівняна до ЄС':'Non-EU / Третя країна'}</div>
+    </div>
+    <div class="infoCard">
+      <div class="infoCardIcon">⏱</div>
+      <div class="infoCardLabel">Орієнтовний час</div>
+      <div class="infoCardValue">${timeEst}</div>
+      <div class="infoCardNote">Залежить від повноти документів</div>
+    </div>
+    <div class="infoCard">
+      <div class="infoCardIcon">💶</div>
+      <div class="infoCardLabel">Орієнтовна вартість</div>
+      <div class="infoCardValue">${costEst}</div>
+      <div class="infoCardNote">+ вартість перекладів та апостиль</div>
+    </div>
+  </div>
+
+  ${warnings}
+
+  <div class="pathCard">
+    <div class="pathHeader">
+      <div class="pathHeaderIcon">🗺️</div>
+      <div>
+        <div class="pathHeaderTitle">Покроковий план дій</div>
+        <div class="pathHeaderSub">${pathway.length} кроків · ${country.flag} ${country.name} · ${isEU?'EU-процедура':'BQFG / KMK-процедура'}</div>
+      </div>
+    </div>
+    <div class="pathSteps">${pathway.map((s,i)=>`
+      <div class="pStep">
+        <div class="pStepNum">${i+1}</div>
+        <div class="pStepBody">
+          <div class="pStepTitle">${s.title}</div>
+          <div class="pStepDesc">${s.desc}</div>
+          <div class="pStepMeta">
+            ${s.time?`<span class="pMeta time">⏱ ${s.time}</span>`:''}
+            ${s.cost?`<span class="pMeta cost">💰 ${s.cost}</span>`:''}
+            ${s.where?`<span class="pMeta where">📍 ${s.where}</span>`:''}
+            ${s.warn?`<span class="pMeta warn">⚠ ${s.warn}</span>`:''}
+          </div>
+        </div>
+      </div>`).join('')}
+    </div>
+  </div>
+
+  ${authorities}
+  ${docList}
+
+  <button class="restartBtn" onclick="restart()">← Розрахувати для іншого диплому</button>`;
+}
+
+// ════════════════════════════════════════════════════
+// PATHWAY BUILDER
+// ════════════════════════════════════════════════════
+function buildPathway(zone, isReg, isSemi, isVoc, isMed, isTeach, isArch, isEng){
+  const isEU = zone==='eu'||zone==='de';
+  const isDE = zone==='de';
+
+  if(isDE){
+    return [
+      {title:'Зберіть оригінал диплому та Transcript of Records', desc:'Dipl.-Urkunde + Notenspiegel. Усі документи вже видані за нім. стандартами — переклад не потрібен.', time:'є вже', cost:'0 €'},
+      {title:'Перевірте ваш диплом у базі anabin.kmk.org', desc:'Для університетів Heidelberg, München, Berlin тощо — оцінка H+, що означає повне міжнародне визнання. Роздрукуйте результат — він може знадобитись роботодавцю.', time:'15 хв', cost:'0 €', where:'anabin.kmk.org'},
+      {title:'За потреби — замовте Statement of Comparability (ZAB)', desc:'Якщо роботодавець або Ausländerbehörde вимагає офіційного документу — ZAB (Zeugnisanerkennungsstelle KMK) видає офіційне Vergleichbarkeitsbescheinigung.', time:'2–4 тижні', cost:'40–50 €', where:'KMK / Kultusministerkonferenz'},
+      {title:'Регульована професія? Зверніться до відповідної Kammer', desc:'Ärztekammer / Ingenieurkammer / Architektenkammer тощо. Нім. диплом як правило визнається автоматично — лише реєстрація.', time:'2–8 тижнів', cost:'100–300 €', where:'Відповідна Berufskammer'},
+    ];
+  }
+
+  if(isEU && !isReg && !isMed){
+    return [
+      {title:'Перевірте диплом в базі anabin.kmk.org', desc:'Введіть назву університету та країну. Результат H+/H= означає що диплом визнається як рівнозначний нім. Hochschulabschluss. H- потребує додаткових дій.', time:'15 хв', cost:'0 €', where:'anabin.kmk.org'},
+      {title:'Якщо anabin H+/H=: підготуйте офіційний переклад', desc:'Для більшості роботодавців у ЄС диплом ЄС де-факто визнається без офіційної процедури. Але для деяких вакансій або Blue Card — потрібен переклад на нім. мову.', time:'1–2 тиж.', cost:'80–200 € (переклад)', where:'Beeidigter Übersetzer'},
+      {title:'Якщо anabin H-: замовте Statement of Comparability (ZAB)', desc:'ZAB оцінить ваш диплом і видасть Vergleichbarkeitsbescheinigung — офіційний документ для роботодавців та Ausländerbehörde.', time:'6–10 тижнів', cost:'200 € (ZAB)', where:'KMK / ZAB'},
+      {title:'Для EU Blue Card: переконайтесь що є Equivalence', desc:'§18c AufenthG вимагає anerkannter Hochschulabschluss. EU-диплом з H+/H= + Statement від ZAB або лист від ZAB — достатньо для Blue Card.', time:'—', cost:'—', where:'Ausländerbehörde'},
+    ];
+  }
+
+  if(isMed && !isEU){
+    return [
+      {title:'Переконайтесь що диплом є в anabin: H+ або H=', desc:'Перевірте ваш університет на anabin.kmk.org. Якщо рейтинг H- або немає — потрібна повна експертиза KMK або додаткова кваліфікація.', time:'15 хв', cost:'0 €', where:'anabin.kmk.org'},
+      {title:'Зберіть повний пакет документів (оригінали + переклади)', desc:'Диплом + Transcript of Records + програма навчання (з годинами та предметами) + підтвердження клінічної практики + посвідчення особи. Всі документи — з апостилем та нім. перекладом від присяжного перекладача.', time:'2–4 тиж.', cost:'300–600 € (переклади + апостиль)'},
+      {title:'Подайте заяву до Approbationsbehörde вашої федеральної землі', desc:'Кожна земля має власний орган (Landesprüfungsamt або Gesundheitsministerium). Вибирайте землю де меньше черга. Додатки: Berlin, NRW, Bayern мають onlне портали.', time:'4–12 міс.', cost:'150–400 €', where:'Landesprüfungsamt (LPA)'},
+      {title:'Kenntnisprüfung або Anpassungslehrgang (якщо вимагається)', desc:'Якщо є суттєві відмінності в програмі навчання — LPA призначить Kenntnisprüfung (іспит з медичних знань) або Anpassungslehrgang (практика під керівництвом). Мова: обов\'язково B2-C1 Deutsch.', time:'3–12 міс.', cost:'0–200 €', where:'Krankenhaus / Facharztpraxis'},
+      {title:'Отримайте Approbation — право на лікарську практику', desc:'Після успішного проходження всіх етапів — LPA видає Approbationsurkunde. Це ваше постійне право на практику в Німеччині та ЄС.', time:'4–8 тиж. після іспиту', cost:'200–400 €'},
+      {title:'Реєстрація в Ärztekammer', desc:'Після Approbation — реєстрація у Ärztekammer вашої землі. Facharzttitel (спеціалізація) — окремий процес Weiterbildung 5–6 р. Для Kassenärztliche Zulassung (Kassenarzt): звертайтесь до KV.', time:'2–4 тиж.', cost:'200–600 €/рік внески', where:'Ärztekammer'},
+    ];
+  }
+
+  if(isVoc && !isEU){
+    return [
+      {title:'Визначте компетентний орган для вашої спеціальності', desc:'Handwerk (Klempner, Elektriker, Friseur тощо) → Handwerkskammer (HWK). Kaufmännische Berufe (Buchhalter, Kaufmann тощо) → Industrie- und Handelskammer (IHK). Altenpflege, Erziehung → Jugendamt або Gesundheitsamt.', time:'1 тиж.', cost:'0 €', where:'Bundesinstitut für Berufsbildung (BIBB)'},
+      {title:'Збір документів та подача заяви за BQFG §4', desc:'§4 BQFG: Formloser Antrag (довільна заява) + копія диплому + Transcript + підтвердження досвіду роботи (Arbeitszeugnisse). Якщо немає документів — §14 BQFG: Kompetenzfeststellungsverfahren (оцінка навичок практично).', time:'2–4 тиж. (підготовка)', cost:'0 € (подача)', where:'HWK або IHK'},
+      {title:'Розгляд заяви та рішення', desc:'Зазвичай 2 місяці (Bearbeitungsfrist за законом). Можливі результати: (А) Vollanerkennung — повне визнання. (Б) Teilanerkennung — часткове + Ausgleichsmaßnahmen. (В) Ablehnung — відмова + шляхи оскарження.', time:'1–3 міс.', cost:'100–300 €'},
+      {title:'При Teilanerkennung: Ausgleichsmaßnahmen', desc:'Якщо часткова відмова: (А) Eignungsprüfung — практичний іспит. (Б) Anpassungslehrgang — курс додаткового навчання (3–6 міс.). Право вибору — за вами (§9 BQFG).', time:'3–6 міс.', cost:'200–800 €', where:'Berufsschule / Betrieb'},
+      {title:'Консультація IQ Netzwerk — безкоштовно', desc:'IQ Netzwerk (Förderung durch BMBF) надає безкоштовну консультацію по всій Німеччині, допомагає підготувати документи та підібрати потрібний орган.', time:'1 тиж.', cost:'0 €', where:'migrationsberatung-iQ.de'},
+    ];
+  }
+
+  if(isTeach){
+    return [
+      {title:'Зверніться до Kultusministerium вашої федеральної землі', desc:'Lehramt — це земельна компетенція. Кожна земля має свої вимоги. Берлін та НРВ традиційно лояльніші. Баварія — найсуворіша. KMK портал: kmk.org/themen/lehrkraefte-im-oeffentlichen-dienst.html', time:'—', cost:'—', where:'Kultusministerium'},
+      {title:'Перевірте диплом в KMK Lehramtsdatenbank', desc:'KMK порівнює іноземні педагогічні дипломи з нім. Lehramt. Ключові критерії: предмети (відповідність Schulbedarf), тривалість навчання (мінімум 4–5 р.), педагогічна практика (Referendariat або аналог).', time:'1–2 міс.', cost:'0–200 €'},
+      {title:'Відповідність KMK-Beschluss: Lehrkräfte mit ausländ. Lehramtsabschlüssen', desc:'KMK Beschluss 2013 + оновлення 2019 — основний документ. Якщо не вистачає предметів або практики — Ausgleichsmaßnahmen: Anpassungslehrgang або Eignungsprüfung.', time:'3–12 міс.', cost:'0–300 €'},
+      {title:'Реєстрація в службі зайнятості вчителів', desc:'Кожна земля має Einstellungsportal (HBS — Baden-Württemberg, BayBOE — Bayern тощо). Quereinsteiger (неповна відповідність): можна вчителювати під нагляд з перспективою повного визнання.', time:'—', cost:'—'},
+    ];
+  }
+
+  if(isArch){
+    return [
+      {title:'Визначте компетентну Architektenkammer вашої землі', desc:'Архітектура — регульована. Камера є в кожній землі. EU-диплом: переважно автоматичне визнання (RL 2005/36/EG). Non-EU: індивідуальна оцінка.', time:'1–2 тиж.', cost:'0 €', where:'Architektenkammer'},
+      {title:'EU-диплом: подайте Meldeverfahren', desc:'EU/EWR: §28 RL 2005/36/EG — Meldung за 1 місяць до початку роботи. Стаж: мінімум 2 роки. Архітектурна камера зобов\'язана відповісти протягом 1 міс.', time:'1–3 міс.', cost:'200–500 €'},
+      {title:'Non-EU: повна процедура визнання через Kammer', desc:'Подати: диплом + Transcript + Portfolioarbeiten + досвід роботи (5+ р. бажано) + нім. переклади. Kammer оцінює відповідність. Можливий Eignungsgespräch.', time:'3–9 міс.', cost:'300–600 €'},
+      {title:'Реєстрація в Architektenkammer', desc:'Після визнання — реєстрація надає право підписувати проекти та будівельні заяви (Bauvorlageberechtigung). Без реєстрації — робота лише під керівництвом зареєстрованого архітектора.', time:'4–8 тиж.', cost:'200–800 €/рік', where:'Architektenkammer'},
+    ];
+  }
+
+  // Загальний non-EU академічний шлях
+  return [
+    {title:'Крок 1: Перевірте ваш університет в базі anabin.kmk.org', desc:`Зайдіть на anabin.kmk.org → Institutionen → Введіть назву університету та країну (${COUNTRIES.find(c=>c.v===D.country)?.name||'вашої країни'}). Результат H+ або H= означає що диплом рівнозначний німецькому Hochschulabschluss. H- = потрібна додаткова оцінка.`, time:'15–30 хв', cost:'0 €', where:'anabin.kmk.org'},
+    {title:'Крок 2: Зберіть повний пакет документів', desc:'Оригінал диплому + нотаріально завірена копія. Додаток до диплому (Diploma Supplement або академічна довідка з переліком предметів і годин). Апостиль (для non-Hague: легалізація у посольстві). Присяжний переклад на нім. мову (Beeidigter Übersetzer). Для мед./пед./юрид.: підтвердження практики.', time:'2–6 тиж.', cost:'200–500 € (переклади + апостиль)'},
+    {title:'Крок 3: Оберіть орган та подайте заяву', desc:`Нерегульовані + academic: Zeugnisanerkennungsstelle (ZAB) при KMK — 200€, 2–4 міс. Регульовані: відповідна Fachbehörde (Ärztekammer, IHK, HWK тощо). Vocational: за BQFG §4 — безкоштовно у HWK або IHK. Поради: безкоштовно у IQ Netzwerk.`, time:'2–4 міс.', cost:'100–400 €', where:'ZAB / Fachbehörde / IQ Netzwerk'},
+    {title:'Крок 4: Розгляд заяви та можливі Ausgleichsmaßnahmen', desc:'Орган має 1 місяць (academic) або 4 місяці (regulated) для відповіді (EU-Richtlinie та BQFG). Три результати: (А) Vollanerkennung — повне визнання. (Б) Teilanerkennung + Ausgleichsmaßnahme (Eignungsprüfung або Anpassungslehrgang). (В) Ablehnung — оскарження через VG або IQ Netzwerk.', time:'1–4 міс.', cost:'0–300 €'},
+    {title:'Крок 5: Отримайте Anerkennungsbescheid', desc:'Офіційний документ про визнання (Bescheid або Bescheinigung). Для Blue Card: Statement of Comparability від ZAB також підходить. Зберігайте оригінал — він знадобиться роботодавцям, Ausländerbehörde та при Einbürgerung.', time:'1–2 тиж. після рішення', cost:'20–50 €'},
+    {title:'Крок 6: Безкоштовна підтримка IQ Netzwerk', desc:'Якщо виникли труднощі — IQ Netzwerk (фінансується BMBF та ESF) надає безкоштовне супроводження на всіх етапах. 80+ консультаційних центрів по Німеччині.', time:'за потреби', cost:'0 €', where:'migrationsberatung-iQ.de'},
+  ];
+}
+
+// ════════════════════════════════════════════════════
+// AUTHORITIES
+// ════════════════════════════════════════════════════
+function buildAuthorities(zone, isReg, isSemi, isVoc, isMed, isTeach, isArch, isEng){
+  const isEU = zone==='eu'||zone==='de';
+  const auths = [];
+
+  // Завжди корисні
+  auths.push({icon:'🔍',bg:'#eff6ff',name:'anabin-Datenbank (KMK)',desc:'Основна база даних KMK для перевірки рейтингу університету та диплому (H+/H=/H-). Перший обов\'язковий крок.',url:'https://anabin.kmk.org'});
+  auths.push({icon:'💬',bg:'#f0fdf4',name:'IQ Netzwerk — Bezкоштовна консультація',desc:'Фінансується BMBF. 80+ центрів по всій Німеччині. Допомагають з документами, вибором органу та оскарженням відмов.',url:'https://www.migrationsberatung-iq.de'});
+
+  if(!isVoc&&!isMed&&!isTeach&&!isArch){
+    auths.push({icon:'📋',bg:'#f5f3ff',name:'ZAB — Zeugnisanerkennungsstelle (KMK)',desc:'Видає Statement of Comparability для академічних дипломів (non-EU). Вартість ~200€. Необхідна для EU Blue Card §18c.',url:'https://www.kmk.org/zab'});
+  }
+
+  if(isMed){
+    auths.push({icon:'🏥',bg:'#fef2f2',name:'Landesprüfungsamt (LPA) вашої землі',desc:'Approbation видається LPA кожної федеральної землі. Berlin: LPA Berlin. Bayern: BLÄK. NRW: LÖGD. Оберіть землю з меньшою чергою.',url:'https://www.bundesaerztekammer.de'});
+    auths.push({icon:'🩺',bg:'#fef2f2',name:'Ärztekammer',desc:'Після Approbation — реєстрація у Ärztekammer вашої землі. Bundesärztekammer — центральна організація.',url:'https://www.bundesaerztekammer.de'});
+  }
+
+  if(isVoc){
+    auths.push({icon:'🏭',bg:'#fffbeb',name:'IHK — Industrie- und Handelskammer',desc:'Для комерційних та технічних спеціальностей (kaufmännisch, IT тощо). BQFG §4 процедура. Онлайн-пошук: ihk.de',url:'https://www.ihk.de'});
+    auths.push({icon:'🔨',bg:'#fffbeb',name:'HWK — Handwerkskammer',desc:'Для ремісничих спеціальностей (Elektro, Klempner, Tischler, Friseur тощо). Bundesverband der HWK.',url:'https://www.handwerkskammer.de'});
+  }
+
+  if(isTeach){
+    auths.push({icon:'🏫',bg:'#f0fdf4',name:'Kultusministerium вашої землі',desc:'Земельна компетенція для Lehramt. KMK — координуюча організація. Перевірте сайт конкретної землі.',url:'https://www.kmk.org/themen/lehrkraefte-im-oeffentlichen-dienst.html'});
+  }
+
+  if(isArch){
+    auths.push({icon:'🏛️',bg:'#f5f3ff',name:'Architektenkammer вашої землі',desc:'Bundesarchitektenkammer координує, але реєстрація — у земельній Kammer. BAK: architektenkammer.de',url:'https://www.bak.de'});
+  }
+
+  if(isEng||isSemi){
+    auths.push({icon:'⚙️',bg:'#fffbeb',name:'Ingenieurkammer (за потреби)',desc:'Будівельні інженери — потребують реєстрації у Ingenieurkammer для проектних підписів. IT, машинобудування — нерегульовані.',url:'https://www.vdi.de'});
+  }
+
+  auths.push({icon:'🌐',bg:'#f4f2ee',name:'Make it in Germany — офіційний портал',desc:'Федеральний портал для кваліфікованих мігрантів. Путівник з Anerkennung, пошук роботи, Blue Card.',url:'https://www.make-it-in-germany.com'});
+  auths.push({icon:'📚',bg:'#f4f2ee',name:'BIBB — Bundesinstitut für Berufsbildung',desc:'База даних та інструмент для порівняння профтехдипломів. Аналог anabin для Berufsausbildung.',url:'https://www.bibb.de/anerkennung'});
+
+  return `<div class="authSection">
+    <div class="authTitle">🏛️ Куди звертатись — компетентні органи</div>
+    ${auths.map(a=>`
+      <div class="authCard">
+        <div class="authCardIcon" style="background:${a.bg}">${a.icon}</div>
+        <div class="authCardBody">
+          <div class="authCardName">${a.name}</div>
+          <div class="authCardDesc">${a.desc}</div>
+          <a class="authCardLink" href="${a.url}" target="_blank">${a.url}</a>
+        </div>
+      </div>`).join('')}
+  </div>`;
+}
+
+// ════════════════════════════════════════════════════
+// DOCUMENTS
+// ════════════════════════════════════════════════════
+function buildDocList(zone, isEU, isMed, isVoc){
+  const isMustAll = D.hasDocs !== 'yes_all';
+  const docs = [
+    {must:true, title:'Оригінал диплому / Abschlusszeugnis', note:'Нотаріально завірена копія (beglaubigte Kopie) — якщо оригінал не можна надати'},
+    {must:true, title:'Додаток до диплому / Transcript of Records', note:'Повний перелік предметів, годин, оцінок. Diploma Supplement — якщо є. Для органу НАЙВАЖЛИВІШИЙ документ.'},
+    {must:!isEU, title:'Апостиль (або легалізація у посольстві)', note:`Апостиль обов\'язковий для всіх non-EU країн. Для ${isEU?'країн ЄС':'вашої країни'}: уточніть у конкретному органі.`},
+    {must:!isEU, title:'Присяжний переклад на німецьку (Beeidigter Übersetzer)', note:'Список присяжних перекладачів: justiz.de → Dolmetscher. Вартість: 30–60 €/сторінка.'},
+    {must:isMed, title:'Програма навчання (Curriculum / Studienplan)', note:'З переліком клінічних дисциплін, годинами практики та теорії. Запитайте у деканаті.'},
+    {must:isMed, title:'Підтвердження клінічної практики (Famulatur, Praktisches Jahr)', note:'Довідка з лікарні або клінічного закладу з підписом та печаткою завідувача.'},
+    {must:false, title:'Підтвердження досвіду роботи (Arbeitszeugnisse)', note:'Необхідні для BQFG §4 (vocational) та для оцінки рівня при Teilanerkennung.'},
+    {must:false, title:'Сертифікат знання мови B2-C1 Deutsch', note:'Для більшості регульованих професій — обов\'язковий (медицина, педагогіка). Для ZAB — не потрібен.'},
+    {must:false, title:'Посвідчення особи / Reisepass + Aufenthaltstitel', note:'Для підтвердження легальності перебування при подачі до органу на території DE.'},
+  ];
+
+  return `<div class="docsSection">
+    <div class="docsTitle">📁 Необхідні документи</div>
+    ${docs.map(d=>`
+      <div class="docItem">
+        <div class="docBadge ${d.must?'docMust':'docMay'}">${d.must?'!':'?'}</div>
+        <div class="docText">
+          <strong>${d.title}</strong>
+          <div class="docNote">${d.note}</div>
+        </div>
+      </div>`).join('')}
+    <div style="margin-top:.85rem;padding:.75rem;background:var(--goldL);border-radius:var(--r3);border:1px solid rgba(201,168,76,0.3)">
+      <div style="font-size:12px;color:#78540a;line-height:1.6"><strong>! = Обов'язково · ? = За потреби залежно від ситуації</strong><br>Якщо документи втрачені: §14 BQFG допускає альтернативну процедуру оцінки компетенцій (Kompetenzfeststellung) без документів.</div>
+    </div>
+  </div>`;
+}
+
+// ════════════════════════════════════════════════════
+// WARNINGS
+// ════════════════════════════════════════════════════
+function buildWarnings(){
+  const warns = [];
+  const isEU = ['eu','de','eu-like'].includes(D.countryZone);
+
+  if(D.prevAner==='rejected')
+    warns.push({type:'warn',text:'<strong>Попередня відмова:</strong> Для оскарження Ablehnung у вас є 1 місяць (Widerspruchsfrist). Зверніться до IQ Netzwerk або Fachanwalt für Verwaltungsrecht. Відмова одного органу не заважає спробувати в іншій землі.'});
+
+  if(D.hasDocs==='no')
+    warns.push({type:'warn',text:'<strong>Відсутність документів:</strong> §14 BQFG передбачає Kompetenzfeststellungsverfahren — оцінку навичок без документів (через тести та практичні завдання). Зверніться до BIBB або IQ Netzwerk для організації.'});
+
+  if(D.degree==='law')
+    warns.push({type:'warn',text:'<strong>Юридична освіта:</strong> Юридичні дипломи НЕ визнаються автоматично в Німеччині (різні правові системи). Для роботи адвокатом: §206 BRAO — можливий тест (Eignungsprüfung). Альтернативи: юридичний консультант, Compliance, корпоративне право (без ліцензії адвоката).'});
+
+  if(D.countryZone==='non-eu')
+    warns.push({type:'info',text:'<strong>Non-EU диплом:</strong> Процедура займає більше часу, але успішне визнання цілком реальне. Ключ — правильно підготовлені документи (апостиль + присяжний переклад + Transcript of Records). IQ Netzwerk допоможе безкоштовно.'});
+
+  if(['medicine','pharmacy','nursing'].includes(D.degree))
+    warns.push({type:'warn',text:'<strong>Мова для медичних професій:</strong> Landesprüfungsamt вимагає підтвердження рівня Deutsch B2-C1 (залежно від землі). Деякі землі вимагають медичний Fachsprachenprüfung (FSP). Запишіться на FSP у Ärztekammer вашої землі.'});
+
+  if(D.studyDur && D.studyDur < 3)
+    warns.push({type:'warn',text:'<strong>Короткий термін навчання:</strong> Навчання менше 3 років може не відповідати нім. стандартам Hochschulabschluss. ZAB може видати Comparability з обмеженнями. Уточніть у ZAB заздалегідь.'});
+
+  if(warns.length===0) return `<div class="successBox"><span class="successBoxIcon">✅</span><div class="successBoxText"><strong>Ваш профіль виглядає без критичних перешкод.</strong> Дотримуйтесь покрокового плану нижче та підготуйте документи.</div></div>`;
+
+  return warns.map(w=>`
+    <div class="${w.type==='info'?'successBox':'warnBox'}">
+      <span class="${w.type==='info'?'successBoxIcon':'warnBoxIcon'}">${w.type==='info'?'ℹ️':'⚠️'}</span>
+      <div class="${w.type==='info'?'successBoxText':'warnBoxText'}">${w.text}</div>
+    </div>`).join('');
+}
+
+function restart(){
+  Object.keys(D).forEach(k=>delete D[k]);
+  step=0;render();
+}
+
+render();
+</script>
+</body>
+</html>
